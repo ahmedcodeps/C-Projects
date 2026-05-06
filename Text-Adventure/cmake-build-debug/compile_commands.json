@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug",
+  "command": "/usr/bin/c++ -g -std=gnu++2b -arch arm64 -fcolor-diagnostics -o CMakeFiles/untitled.dir/src/main.cpp.o -c /Users/ahmib/Documents/Text-Adventure/src/main.cpp",
+  "file": "/Users/ahmib/Documents/Text-Adventure/src/main.cpp",
+  "output": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug/CMakeFiles/untitled.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug",
+  "command": "/usr/bin/c++ -g -std=gnu++2b -arch arm64 -fcolor-diagnostics -o CMakeFiles/untitled.dir/src/Engine/Item.cpp.o -c /Users/ahmib/Documents/Text-Adventure/src/Engine/Item.cpp",
+  "file": "/Users/ahmib/Documents/Text-Adventure/src/Engine/Item.cpp",
+  "output": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug/CMakeFiles/untitled.dir/src/Engine/Item.cpp.o"
+},
+{
+  "directory": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug",
+  "command": "/usr/bin/c++ -g -std=gnu++2b -arch arm64 -fcolor-diagnostics -o CMakeFiles/untitled.dir/src/Engine/Room.cpp.o -c /Users/ahmib/Documents/Text-Adventure/src/Engine/Room.cpp",
+  "file": "/Users/ahmib/Documents/Text-Adventure/src/Engine/Room.cpp",
+  "output": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug/CMakeFiles/untitled.dir/src/Engine/Room.cpp.o"
+},
+{
+  "directory": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug",
+  "command": "/usr/bin/c++ -g -std=gnu++2b -arch arm64 -fcolor-diagnostics -o CMakeFiles/untitled.dir/src/Engine/Player.cpp.o -c /Users/ahmib/Documents/Text-Adventure/src/Engine/Player.cpp",
+  "file": "/Users/ahmib/Documents/Text-Adventure/src/Engine/Player.cpp",
+  "output": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug/CMakeFiles/untitled.dir/src/Engine/Player.cpp.o"
+},
+{
+  "directory": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug",
+  "command": "/usr/bin/c++ -g -std=gnu++2b -arch arm64 -fcolor-diagnostics -o CMakeFiles/untitled.dir/src/Game/Game.cpp.o -c /Users/ahmib/Documents/Text-Adventure/src/Game/Game.cpp",
+  "file": "/Users/ahmib/Documents/Text-Adventure/src/Game/Game.cpp",
+  "output": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug/CMakeFiles/untitled.dir/src/Game/Game.cpp.o"
+},
+{
+  "directory": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug",
+  "command": "/usr/bin/c++ -g -std=gnu++2b -arch arm64 -fcolor-diagnostics -o CMakeFiles/untitled.dir/src/Engine/Enemy.cpp.o -c /Users/ahmib/Documents/Text-Adventure/src/Engine/Enemy.cpp",
+  "file": "/Users/ahmib/Documents/Text-Adventure/src/Engine/Enemy.cpp",
+  "output": "/Users/ahmib/Documents/Text-Adventure/cmake-build-debug/CMakeFiles/untitled.dir/src/Engine/Enemy.cpp.o"
+}
+]
