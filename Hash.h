@@ -1,3 +1,5 @@
+// Simple hash table implementation done in C++
+
 struct Bucket {
 public:
     Bucket() {
