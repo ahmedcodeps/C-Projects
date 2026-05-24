@@ -70,6 +70,94 @@ public:
         return 0;
     }
     
+   Bucket* operator[](unsigned int index) {
+        return values[index];
+    }
+    
+    std::vector<std::string> getValues() {
+        std::vector<std::string> vals;
+        for (int i = 0; i < this->size(); i++) {
+            Bucket* current = values[i];
+            while (current != nullptr) {
+             if (current->m_value != nullptr)
+                vals.push_back(current->m_value);
+             current = current->m_next;
+            }
+        }
+        return vals;
+    }
+    
+    std::vector<std::string> getValues(unsigned int index) {
+        std::vector<std::string> vals;
+        Bucket* current = values[index];
+        while (current != nullptr) {
+            if (current->m_value != nullptr)
+                vals.push_back(current->m_value);
+            current = current->m_next;
+        }
+        return vals;
+    }
+    
+    void insert(const char* value, unsigned int index) {
+        Bucket* bucket = values[index];
+        while (bucket->m_next != nullptr)
+            bucket = bucket->m_next;
+        
+        Bucket* newBucket = new Bucket();
+        newBucket->m_value = value;
+        bucket->m_next = newBucket;
+    }
+    
+  
+    unsigned int insert(const char* value) {
+        int emptyBucket = -1;
+        Bucket* bucket = values[0];
+        
+        for (int i = 0; i < this->size(); i++) {
+            if (values[i]->m_next == nullptr) {
+                emptyBucket = i;
+                bucket = values[i];
+                break;
+            }
+        }
+        
+        if (emptyBucket == -1) {
+            int smallestBucket = 0;
+            int smallestLength = 1;
+            for (int i = 0; i < this->size(); i++) {
+                Bucket* current = values[i];
+                Bucket* b = current;
+                int temp_length = 0;
+                
+                while (current != nullptr) {
+                    temp_length++;
+                    if (current->m_next == nullptr)
+                        b = current;
+                    current = current->m_next;
+                }
+                
+                if (temp_length < smallestLength) {
+                    smallestLength = temp_length;
+                    smallestBucket = i;
+                    bucket = b;
+                }
+            }
+            emptyBucket = smallestBucket;
+        }
+        
+        Bucket* newbucket = new Bucket();
+        newbucket->m_value = value;
+        bucket->m_next = newbucket;
+        
+        return emptyBucket;
+    }
+    
+    void printKeyValues() {
+        for(int i = 0; i < this->size(); i++) {
+            std::println("{} : {}", i, this->getValues(i));
+        }
+    }
+    
 private:
     Bucket* values[T];
     
