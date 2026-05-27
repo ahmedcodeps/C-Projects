@@ -1,5 +1,4 @@
-// Simple hash table implementation done in C++
-
+// simple hash table implementation
 struct Bucket {
 public:
     Bucket() {
@@ -34,13 +33,15 @@ public:
     
     
     unsigned int HashValue(const char* value) { return m_hash(value); }
+    void RemoveValue(unsigned int bucket, const char* value) { RemoveBucket(values[bucket], value); }
+    unsigned int size() { return T; }
     
-    void RemoveValue(unsigned int bucket, const char* value) {
-        
-        RemoveBucket(values[bucket], value);
-    }
     
     Bucket* find(unsigned int index) {
+        if (index > this->size() || index < 0) {
+            std::cout << "Bucket at index " << index << " does not exist" << std::endl;
+            return nullptr;
+        }
         return values[index];
     }
     
@@ -59,9 +60,6 @@ public:
         return false;
     }
     
-    unsigned int size() {
-        return T;
-    }
     
     unsigned int index(const char* value) {
         if (value != nullptr) {
@@ -98,7 +96,7 @@ public:
         return vals;
     }
     
-    void insert(const char* value, unsigned int index) {
+    unsigned int insert(const char* value, unsigned int index) {
         Bucket* bucket = values[index];
         while (bucket->m_next != nullptr)
             bucket = bucket->m_next;
@@ -106,50 +104,28 @@ public:
         Bucket* newBucket = new Bucket();
         newBucket->m_value = value;
         bucket->m_next = newBucket;
+        
+        return index;
     }
     
   
     unsigned int insert(const char* value) {
-        int emptyBucket = -1;
-        Bucket* bucket = values[0];
+        unsigned int index = -1;
         
         for (int i = 0; i < this->size(); i++) {
             if (values[i]->m_next == nullptr) {
-                emptyBucket = i;
-                bucket = values[i];
+                index = insert(value, i);
                 break;
             }
         }
         
-        if (emptyBucket == -1) {
-            int smallestBucket = 0;
-            int smallestLength = 1;
-            for (int i = 0; i < this->size(); i++) {
-                Bucket* current = values[i];
-                Bucket* b = current;
-                int temp_length = 0;
-                
-                while (current != nullptr) {
-                    temp_length++;
-                    if (current->m_next == nullptr)
-                        b = current;
-                    current = current->m_next;
-                }
-                
-                if (temp_length < smallestLength) {
-                    smallestLength = temp_length;
-                    smallestBucket = i;
-                    bucket = b;
-                }
-            }
-            emptyBucket = smallestBucket;
+        if (index == -1) {
+            index = findSmallestBucket();
+            this->insert(value, index);
+            return index;
         }
-        
-        Bucket* newbucket = new Bucket();
-        newbucket->m_value = value;
-        bucket->m_next = newbucket;
-        
-        return emptyBucket;
+
+        return index;
     }
     
     void printKeyValues() {
@@ -237,6 +213,27 @@ private:
         std::cout << "This value is not in the bucket" << std::endl;
         return;
         
+    }
+    
+    unsigned int findSmallestBucket() {
+        int smallestBucket = 0;
+        int smallestLength = 0;
+        
+        for (int i = 0; i < this->size(); i++) {
+            Bucket* current = values[i];
+            int temp_length = 0;
+            
+            do {
+                temp_length++;
+                current = current->m_next;
+            } while (current->m_next != nullptr);
+            
+            if (temp_length < smallestLength || i == 0) {
+                smallestLength = temp_length;
+                smallestBucket = i;
+            }
+        }
+        return smallestBucket;
     }
     
 };
