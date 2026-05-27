@@ -1,0 +1,601 @@
+BlueJ run started: Thu Jan 15 09:22:12 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Detected language "english" based on iso639-2 code "eng"
+Opening project: C:\Users\ahmib\Project
+1768461780609: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+java.io.FileNotFoundException while reading import cache: C:\Users\ahmib\bluej\import-cache.xml (The system cannot find the file specified)
+Opening project: C:\Users\ahmib\First
+1768461902662: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+java.io.FileNotFoundException while reading import cache: C:\Users\ahmib\bluej\import-cache.xml (The system cannot find the file specified)
+Communication with debug VM fully established.
+Opening project: C:\Users\ahmib\Second
+1768462634627: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Opening project: C:\Users\ahmib\Third
+1768462905292: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Exception in thread "JavaFX Application Thread" java.lang.IllegalArgumentException
+	at javafx.scene.control.IndexRange.<init>(IndexRange.java:53)
+	at bluej.editor.base.TextLine.showError(TextLine.java:259)
+	at bluej.editor.flow.FlowEditorPane.addErrorUnderline(FlowEditorPane.java:534)
+	at bluej.editor.flow.FlowEditorPane.updateRender(FlowEditorPane.java:422)
+	at bluej.editor.flow.FlowEditorPane.textChanged(FlowEditorPane.java:407)
+	at bluej.editor.flow.FlowEditor.textReplaced(FlowEditor.java:2311)
+	at bluej.editor.flow.HoleDocument.replaceText(HoleDocument.java:170)
+	at bluej.editor.flow.FlowEditorPane.replaceText(FlowEditorPane.java:898)
+	at bluej.editor.flow.FlowEditorPane.replaceSelection(FlowEditorPane.java:838)
+	at bluej.editor.flow.FlowActions$DeletePrevCharAction.actionPerformed(FlowActions.java:1941)
+	at bluej.editor.flow.FlowActions.lambda$updateKeymap$4(FlowActions.java:240)
+	at org.fxmisc.wellbehaved.event.InputMap.lambda$consume$2(InputMap.java:256)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.fxmisc.wellbehaved.event.PatternActionMap.lambda$forEachEventType$1(InputMap.java:414)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:23)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandler.handle(InputHandler.java:50)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.scene.Scene.processKeyEvent(Scene.java:2197)
+	at javafx.scene.Scene$ScenePeerListener.keyEvent(Scene.java:2718)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:218)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:150)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleKeyEvent$1(GlassViewEventHandler.java:250)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:430)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleKeyEvent(GlassViewEventHandler.java:249)
+	at com.sun.glass.ui.View.handleKeyEvent(View.java:551)
+	at com.sun.glass.ui.View.notifyKey(View.java:975)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+====
+
+====
+BlueJ run started: Sun Jan 18 09:35:58 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1768721759716: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Exception in thread "JavaFX Application Thread" java.lang.IllegalArgumentException
+	at javafx.scene.control.IndexRange.<init>(IndexRange.java:53)
+	at bluej.editor.base.TextLine.showError(TextLine.java:259)
+	at bluej.editor.flow.FlowEditorPane.addErrorUnderline(FlowEditorPane.java:534)
+	at bluej.editor.flow.FlowEditorPane.updateRender(FlowEditorPane.java:422)
+	at bluej.editor.flow.FlowEditorPane.textChanged(FlowEditorPane.java:407)
+	at bluej.editor.flow.FlowEditor.textReplaced(FlowEditor.java:2311)
+	at bluej.editor.flow.HoleDocument.replaceText(HoleDocument.java:170)
+	at bluej.editor.flow.FlowEditorPane.replaceText(FlowEditorPane.java:898)
+	at bluej.editor.flow.FlowEditorPane.replaceSelection(FlowEditorPane.java:838)
+	at bluej.editor.flow.FlowActions$DeletePrevCharAction.actionPerformed(FlowActions.java:1941)
+	at bluej.editor.flow.FlowActions.lambda$updateKeymap$4(FlowActions.java:240)
+	at org.fxmisc.wellbehaved.event.InputMap.lambda$consume$2(InputMap.java:256)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.fxmisc.wellbehaved.event.PatternActionMap.lambda$forEachEventType$1(InputMap.java:414)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:23)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandler.handle(InputHandler.java:50)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.scene.Scene.processKeyEvent(Scene.java:2197)
+	at javafx.scene.Scene$ScenePeerListener.keyEvent(Scene.java:2718)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:218)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:150)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleKeyEvent$1(GlassViewEventHandler.java:250)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:430)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleKeyEvent(GlassViewEventHandler.java:249)
+	at com.sun.glass.ui.View.handleKeyEvent(View.java:551)
+	at com.sun.glass.ui.View.notifyKey(View.java:975)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 947: java.util.InputMismatchException:
+null
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 1602: java.util.InputMismatchException:
+null (in java.util.Scanner)
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 2267: java.util.InputMismatchException:
+null (in java.util.Scanner)
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 2221: java.util.InputMismatchException:
+null (in java.util.Scanner)
+====
+
+====
+BlueJ run started: Mon Jan 19 09:38:34 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1768808315713: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 947: java.util.InputMismatchException:
+null
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 1602: java.util.InputMismatchException:
+null (in java.util.Scanner)
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 2267: java.util.InputMismatchException:
+null (in java.util.Scanner)
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 2221: java.util.InputMismatchException:
+null (in java.util.Scanner)
+====
+
+====
+BlueJ run started: Tue Jan 20 09:26:22 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1768893984293: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Wed Jan 21 09:24:22 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1768980264368: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Internal error: Update stats failed: java.net.ConnectException: Connection timed out: connect
+====
+
+====
+====
+
+====
+BlueJ run started: Wed Jan 21 09:25:51 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+BlueJ run started: Wed Jan 21 09:25:51 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+Opening project: C:\Users\ahmib\Third
+1768980353642: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Internal error: Update stats failed: java.net.ConnectException: Connection refused: connect
+1768980355349: Listening for JDWP connection on address: javadebug
+Communication with debug VM fully established.
+Internal error: Update stats failed: java.net.ConnectException: Connection refused: connect
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 947: java.util.InputMismatchException:
+null
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 1602: java.util.InputMismatchException:
+null (in java.util.Scanner)
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 2267: java.util.InputMismatchException:
+null (in java.util.Scanner)
+Error or exception for source not in project: C:\Users\ahmib\Third\Scanner.java, line 2221: java.util.InputMismatchException:
+null (in java.util.Scanner)
+Exception in thread "JavaFX Application Thread" java.lang.IllegalArgumentException
+	at javafx.scene.control.IndexRange.<init>(IndexRange.java:53)
+	at bluej.editor.base.TextLine.showError(TextLine.java:259)
+	at bluej.editor.flow.FlowEditorPane.addErrorUnderline(FlowEditorPane.java:534)
+	at bluej.editor.flow.FlowEditorPane.updateRender(FlowEditorPane.java:422)
+	at bluej.editor.flow.FlowEditorPane.textChanged(FlowEditorPane.java:407)
+	at bluej.editor.flow.FlowEditor.textReplaced(FlowEditor.java:2311)
+	at bluej.editor.flow.HoleDocument.replaceText(HoleDocument.java:170)
+	at bluej.editor.flow.FlowEditorPane.replaceText(FlowEditorPane.java:898)
+	at bluej.editor.flow.FlowEditorPane.replaceSelection(FlowEditorPane.java:838)
+	at bluej.editor.flow.FlowActions$DeletePrevCharAction.actionPerformed(FlowActions.java:1941)
+	at bluej.editor.flow.FlowActions.lambda$updateKeymap$4(FlowActions.java:240)
+	at org.fxmisc.wellbehaved.event.InputMap.lambda$consume$2(InputMap.java:256)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.fxmisc.wellbehaved.event.PatternActionMap.lambda$forEachEventType$1(InputMap.java:414)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:23)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandler.handle(InputHandler.java:50)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.scene.Scene.processKeyEvent(Scene.java:2197)
+	at javafx.scene.Scene$ScenePeerListener.keyEvent(Scene.java:2718)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:218)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:150)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleKeyEvent$1(GlassViewEventHandler.java:250)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:430)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleKeyEvent(GlassViewEventHandler.java:249)
+	at com.sun.glass.ui.View.handleKeyEvent(View.java:551)
+	at com.sun.glass.ui.View.notifyKey(View.java:975)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+====
+
+====
+BlueJ run started: Sun Jan 25 10:31:38 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1769329900013: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Mon Jan 26 09:31:41 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1769412703189: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+1769413905377: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+1769413906634: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Tue Jan 27 09:11:37 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1769497898779: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Wed Jan 28 09:54:01 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1769586842685: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Thu Jan 29 09:50:38 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1769673040112: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Thu Jan 29 09:50:47 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1769673050527: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Thu Feb 05 09:42:55 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1770277377358: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Exception in thread "JavaFX Application Thread" java.lang.IllegalArgumentException
+	at javafx.scene.control.IndexRange.<init>(IndexRange.java:53)
+	at bluej.editor.base.TextLine.showError(TextLine.java:259)
+	at bluej.editor.flow.FlowEditorPane.addErrorUnderline(FlowEditorPane.java:534)
+	at bluej.editor.flow.FlowEditorPane.updateRender(FlowEditorPane.java:422)
+	at bluej.editor.flow.FlowEditorPane.textChanged(FlowEditorPane.java:407)
+	at bluej.editor.flow.FlowEditor.textReplaced(FlowEditor.java:2311)
+	at bluej.editor.flow.HoleDocument.replaceText(HoleDocument.java:170)
+	at bluej.editor.flow.FlowEditorPane.replaceText(FlowEditorPane.java:898)
+	at bluej.editor.flow.FlowEditorPane.replaceSelection(FlowEditorPane.java:838)
+	at bluej.editor.flow.FlowActions$DeletePrevCharAction.actionPerformed(FlowActions.java:1941)
+	at bluej.editor.flow.FlowActions.lambda$updateKeymap$4(FlowActions.java:240)
+	at org.fxmisc.wellbehaved.event.InputMap.lambda$consume$2(InputMap.java:256)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.fxmisc.wellbehaved.event.PatternActionMap.lambda$forEachEventType$1(InputMap.java:414)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:23)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandlerMap.lambda$null$0(InputHandlerMap.java:22)
+	at org.fxmisc.wellbehaved.event.InputHandler.handle(InputHandler.java:50)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.scene.Scene.processKeyEvent(Scene.java:2197)
+	at javafx.scene.Scene$ScenePeerListener.keyEvent(Scene.java:2718)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:218)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:150)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleKeyEvent$1(GlassViewEventHandler.java:250)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:430)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleKeyEvent(GlassViewEventHandler.java:249)
+	at com.sun.glass.ui.View.handleKeyEvent(View.java:551)
+	at com.sun.glass.ui.View.notifyKey(View.java:975)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+====
+
+====
+BlueJ run started: Sun Feb 08 09:55:28 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1770537329920: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Mon Feb 09 09:41:21 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1770622882942: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Tue Feb 10 09:47:39 EET 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1770709660988: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Tue Mar 31 17:26:33 AST 2026
+BlueJ version 5.5.0
+Build ID: fbe85351
+Java version 21.0.6
+JavaFX version 23.0.2+3
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.6+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: C:\Program Files\BlueJ\jdk
+----
+Opening project: C:\Users\ahmib\Third
+1774967195400: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
