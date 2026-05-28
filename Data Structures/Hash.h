@@ -110,7 +110,7 @@ public:
     
   
     unsigned int insert(const char* value) {
-        unsigned int index = nullptr;
+        unsigned int index;
         
         for (int i = 0; i < this->size(); i++) {
             if (values[i]->m_next == nullptr) {
