@@ -110,21 +110,16 @@ public:
     
   
     unsigned int insert(const char* value) {
-        unsigned int index = -1;
+        unsigned int index = nullptr;
         
         for (int i = 0; i < this->size(); i++) {
             if (values[i]->m_next == nullptr) {
                 index = insert(value, i);
-                break;
+                return index;
             }
         }
-        
-        if (index == -1) {
-            index = findSmallestBucket();
-            this->insert(value, index);
-            return index;
-        }
 
+        index = insert(value, findSmallestBucket());
         return index;
     }
     
