@@ -1,6 +1,4 @@
-//
-// Created by Ahmed Ibrahim on 5/31/26.
-//
+
 
 #ifndef UNTITLED_OBJECTS_H
 #define UNTITLED_OBJECTS_H
