@@ -8,16 +8,18 @@
 #include <string>
 class Item {
 public:
-    Item(const std::string& name,const std::string& description, int damage);
+    Item(const std::string& name,const std::string& description, int damage, int heal);
     const std::string& getName() const;
     const std::string& getDescription() const;
-    const bool getIsFood() const;
+    bool getIsFood() const;
     int getDamage() const;
+    int getHeal() const;
 private:
     std::string m_name;
     std::string m_description;
     int m_damage;
-    bool m_isfood;
+    int m_heal;
+    bool m_isFood;
 };
 
 #endif //UNTITLED_ITEM_H

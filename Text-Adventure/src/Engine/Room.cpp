@@ -1,10 +1,11 @@
 #include "Room.h"
+#include "Objects.h"
 #include <print>
 #include <ranges>
 
 
 Room::Room(const std::string& name, const std::string& description) :
-m_name(name), m_description(description) {}
+m_name(name), m_description(description), m_enemy(nullptr) {}
 
 const std::string& Room::getName() const {
     return m_name;
@@ -23,10 +24,12 @@ const std::vector<std::unique_ptr<Item> >& Room::getItems() const {
 }
 
 Enemy* Room::getEnemy() const {
-    return m_enemy.get();
+    if (m_enemy)
+        return m_enemy.get();
+    return nullptr;
 }
 
-void Room::print_contents() const {
+void Room::printContents() const {
     std::println("{}", m_name);
     std::println("{}", m_description);
 
@@ -64,7 +67,7 @@ void Room::addEnemy(std::unique_ptr<Enemy> enemy) {
 
 bool Room::removeEnemy() {
     if (m_enemy->isDead() == true) {
-        if (m_enemy->getName() == "Zombie") {
+        if (m_enemy->getName() == ENEMIES::ZOMBIE) {
             std::println("{} has been put out of its misery...", m_enemy->getName());
         }
         else {

@@ -6,6 +6,7 @@
 #include <print>
 #include <iostream>
 #include "../Engine/Parser.h"
+#include "../Engine/Objects.h"
 
 Game::Game() = default;
 
@@ -37,41 +38,41 @@ void Game::Init() {
     std::string name;
     std::cin >> name;
 
-    auto Cave_of_Awakening = std::make_unique<Room>("Cave of Awakening", "A strange dark cave, the sound of dripping water from stalactites fills your ears.. How did you get here?");
-    auto Forest_of_Mystery = std::make_unique<Room>("Forest of Mystery", "A lush forest concealed by fog and mist, shadows lurk in the foggy cloak..");
-    auto Rocky_Range = std::make_unique<Room>("Rocky Range", "A rocky hill with a small lake swelling underneath.");
-    auto Abandoned_Settlement = std::make_unique<Room>("Abandoned Settlement", "Ruins of a small village, there's a dried up well and torn down brick houses.");
-    auto Brick_House = std::make_unique<Room>("Abandoned brick house", "The only house left partially standing, you try to find anything of use.");
-    auto Upstairs = std::make_unique<Room>("Upstairs the House", "You see a family portrait on the walls, there used to be a family here, where are they?");
-    auto Village_Outskirts = std::make_unique<Room>("Village Outskirts", "There's nothing but empty land for miles, are you stuck here forever? You decide to give up...");
+    auto Cave_of_Awakening = std::make_unique<Room>(Locations::CAVE_OF_AWAKENING, "A strange dark cave, the sound of dripping water from stalactites fills your ears.. How did you get here?");
+    auto Forest_of_Mystery = std::make_unique<Room>(Locations::FOREST_OF_MYSTERY, "A lush forest concealed by fog and mist, shadows lurk in the foggy cloak..");
+    auto Rocky_Range = std::make_unique<Room>(Locations::ROCKY_RANGE, "A rocky hill with a small lake swelling underneath.");
+    auto Abandoned_Settlement = std::make_unique<Room>(Locations::ABANDONED_SETTLEMENT, "Ruins of a small village, there's a dried up well and torn down brick houses.");
+    auto Brick_House = std::make_unique<Room>(Locations::ABANDONED_BRICK_HOUSE, "The only house left partially standing, you try to find anything of use.");
+    auto Upstairs = std::make_unique<Room>(Locations::UPSTAIRS_THE_HOUSE, "You see a family portrait on the walls, there used to be a family here, where are they?");
+    auto Village_Outskirts = std::make_unique<Room>(Locations::VILLAGE_OUTSKIRTS, "There's nothing but empty land for miles, are you stuck here forever? You decide to give up...");
 
-    Cave_of_Awakening->addExit("north", Forest_of_Mystery.get());
-    Forest_of_Mystery->addExit("south", Cave_of_Awakening.get());
-    Forest_of_Mystery->addExit("west", Rocky_Range.get());
-    Rocky_Range->addExit("east", Forest_of_Mystery.get());
-    Rocky_Range->addExit("north", Abandoned_Settlement.get());
-    Abandoned_Settlement->addExit("south", Rocky_Range.get());
-
-
-    Abandoned_Settlement->addExit("brick house", Brick_House.get());
-    Abandoned_Settlement->addExit("locked gate", Village_Outskirts.get());
-    Brick_House->addExit("outside", Abandoned_Settlement.get());
-    Brick_House->addExit("upstairs", Upstairs.get());
-    Upstairs->addExit("downstairs", Brick_House.get());
+    Cave_of_Awakening->addExit(Exits::NORTH, Forest_of_Mystery.get());
+    Forest_of_Mystery->addExit(Exits::SOUTH, Cave_of_Awakening.get());
+    Forest_of_Mystery->addExit(Exits::WEST, Rocky_Range.get());
+    Rocky_Range->addExit(Exits::EAST, Forest_of_Mystery.get());
+    Rocky_Range->addExit(Exits::NORTH, Abandoned_Settlement.get());
+    Abandoned_Settlement->addExit(Exits::SOUTH, Rocky_Range.get());
 
 
-    auto Chipped_Sword = std::make_unique<Item>("Chipped Sword", "Badly battered sword, eroded from years of use.", 10);
-    auto Mysterious_Seed = std::make_unique<Item>("Seed", "Mysterious seed found on a dug up piece of soil", 0);
-    auto Hearty_Bass = std::make_unique<Item>("Bass", "Hearty fish that's sure to fill you up!", 0);
-    auto Silver_Sword = std::make_unique<Item>("Silver Sword", "Of very fine craftsmanship, apt at slaying beasts.", 15);
-    auto Rotting_Meat = std::make_unique<Item>("Rotten Meat", "It has a putrid smell.. eat at your own risk.",0);
-    auto Moldy_Bread = std::make_unique<Item>("Moldy Bread", "The bread is old, its growing fur like an animal.", 0);
-    auto Key = std::make_unique<Item>("Key", "A peculiar key, rusting and corroded with a strange insignia carved onto the back",1);
+    Abandoned_Settlement->addExit(Exits::BRICK_HOUSE, Brick_House.get());
+    Abandoned_Settlement->addExit(Exits::LOCKED_GATE, Village_Outskirts.get());
+    Brick_House->addExit(Exits::OUTSIDE, Abandoned_Settlement.get());
+    Brick_House->addExit(Exits::UPSTAIRS, Upstairs.get());
+    Upstairs->addExit(Exits::DOWNSTAIRS, Brick_House.get());
 
-    auto Orca = std::make_unique<Enemy>("Orca", "He towers over you, salivating at the idea of his next meal, battle scars are imprinted all over his body.", 15, 5);
-    auto Ghost = std::make_unique<Enemy>("Ghost", "The ghost howls at you, it has no physical composition, it cannot be hurt or hit.", 10, 5);
-    auto Grey_Wolf = std::make_unique<Enemy>("Grey Wolf", "A grey wolf searching for scraps, she dosen't want to fight, but will if she has to.", 25, 10);
-    auto Zombie = std::make_unique<Enemy>("Zombie", "The green and fleshy monster turns towards you and stares, it's starving and too exhausted to fight", 1, 0);
+
+    auto Chipped_Sword = std::make_unique<Item>(Items::CHIPPED_SWORD, "Badly battered sword, eroded from years of use.", 10, 0);
+    auto Mysterious_Seed = std::make_unique<Item>(Items::SEED, "Mysterious seed found on a dug up piece of soil", 0, 3);
+    auto Hearty_Bass = std::make_unique<Item>(Items::BASS, "Hearty fish that's sure to fill you up!", 0, 7);
+    auto Silver_Sword = std::make_unique<Item>(Items::SILVER_SWORD, "Of very fine craftsmanship, apt at slaying beasts.", 15, 0);
+    auto Rotting_Meat = std::make_unique<Item>(Items::ROTTEN_MEAT, "It has a putrid smell.. eat at your own risk.",0, -5);
+    auto Moldy_Bread = std::make_unique<Item>(Items::MODLY_BREAD, "The bread is old, its growing fur like an animal.", 0, 3);
+    auto Key = std::make_unique<Item>(Items::KEY, "A peculiar key, rusting and corroded with a strange insignia carved onto the back",1, 0);
+
+    auto Orca = std::make_unique<Enemy>(ENEMIES::ORCA, "He towers over you, salivating at the idea of his next meal, battle scars are imprinted all over his body.", 15, 5);
+    auto Ghost = std::make_unique<Enemy>(ENEMIES::GHOST, "The ghost howls at you, it has no physical composition, it cannot be hurt or hit.", 10, 5);
+    auto Grey_Wolf = std::make_unique<Enemy>(ENEMIES::GREY_WOLF, "A grey wolf searching for scraps, she dosen't want to fight, but will if she has to.", 25, 10);
+    auto Zombie = std::make_unique<Enemy>(ENEMIES::ZOMBIE, "The green and fleshy monster turns towards you and stares, it's starving and too exhausted to fight", 1, 0);
     Cave_of_Awakening->addEnemy(std::move(Orca));
     Forest_of_Mystery->addEnemy(std::move(Ghost));
     Abandoned_Settlement->addEnemy(std::move(Grey_Wolf));
@@ -100,7 +101,7 @@ void Game::Init() {
 
 void Game::Run() {
     m_isRunning = true;
-    m_player->GetRoom()->print_contents();
+    m_player->GetRoom()->printContents();
 
 
     while (m_isRunning) {
@@ -127,7 +128,7 @@ void Game::ProcessCommands(const Command &cmd) {
     if (m_player->isFighting() == false) {
         if (cmd.action == "go") {
             m_player->Move(cmd.name);
-            m_player->GetRoom()->print_contents();
+            m_player->GetRoom()->printContents();
         }
         else if (cmd.action == "take")
             m_player->Take(cmd.name);
@@ -144,7 +145,7 @@ void Game::ProcessCommands(const Command &cmd) {
             m_player->Inventory();
 
         else if (cmd.action == "look")
-            m_player->GetRoom()->print_contents();
+            m_player->GetRoom()->printContents();
 
         else if (cmd.action == "stats")
             m_player->PrintStats();

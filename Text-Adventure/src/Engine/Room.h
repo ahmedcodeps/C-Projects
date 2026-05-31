@@ -25,7 +25,7 @@ public:
 
     Enemy* getEnemy() const;
 
-    void print_contents() const;
+    void printContents() const;
 
     void addItem(std::unique_ptr<Item> item);
     void addExit(const std::string& direction, Room* room);

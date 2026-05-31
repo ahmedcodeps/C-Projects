@@ -12,7 +12,7 @@ public:
 
     const std::string& getName() const;
     const std::string& getDescription() const;
-    int getHealth();
+    int getHealth() ;
     int getDamage() const;
     bool isDead() const;
     void TakeDamage(int damage);
