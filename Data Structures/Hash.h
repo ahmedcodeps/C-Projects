@@ -96,32 +96,6 @@ public:
         return vals;
     }
     
-    unsigned int insert(const char* value, unsigned int index) {
-        Bucket* bucket = values[index];
-        while (bucket->m_next != nullptr)
-            bucket = bucket->m_next;
-        
-        Bucket* newBucket = new Bucket();
-        newBucket->m_value = value;
-        bucket->m_next = newBucket;
-        
-        return index;
-    }
-    
-  
-    unsigned int insert(const char* value) {
-        unsigned int index;
-        
-        for (int i = 0; i < this->size(); i++) {
-            if (values[i]->m_next == nullptr) {
-                index = insert(value, i);
-                return index;
-            }
-        }
-
-        index = insert(value, findSmallestBucket());
-        return index;
-    }
     
     void printKeyValues() {
         for(int i = 0; i < this->size(); i++) {
@@ -151,7 +125,8 @@ private:
         std::string val = static_cast<std::string>(value);
         
         for (int i = 0; i < val.size(); i++) {
-            num += (std::tolower(val[i]) * 31);
+            num += 3;
+            num += ((std::tolower(val[i]) * 31) / 4);
         }
         
         return num % T;
@@ -170,7 +145,7 @@ private:
         unsigned int pos = ComputeHash(value);
        
         
-        if (std::strcmp(bucket->m_value, value) == 0) {
+        if (bucket->m_value && std::strcmp(bucket->m_value, value) == 0) {
             if (bucket->m_next != nullptr) {
                 values[pos] = bucket->m_next;
                 delete bucket;
@@ -210,25 +185,5 @@ private:
         
     }
     
-    unsigned int findSmallestBucket() {
-        int smallestBucket = 0;
-        int smallestLength = 0;
-        
-        for (int i = 0; i < this->size(); i++) {
-            Bucket* current = values[i];
-            int temp_length = 0;
-            
-            do {
-                temp_length++;
-                current = current->m_next;
-            } while (current->m_next != nullptr);
-            
-            if (temp_length < smallestLength || i == 0) {
-                smallestLength = temp_length;
-                smallestBucket = i;
-            }
-        }
-        return smallestBucket;
-    }
     
 };
