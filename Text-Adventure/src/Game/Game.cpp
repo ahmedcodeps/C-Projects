@@ -66,7 +66,7 @@ void Game::Init() {
     auto Hearty_Bass = std::make_unique<Item>(Items::BASS, "Hearty fish that's sure to fill you up!", 0, 7);
     auto Silver_Sword = std::make_unique<Item>(Items::SILVER_SWORD, "Of very fine craftsmanship, apt at slaying beasts.", 15, 0);
     auto Rotting_Meat = std::make_unique<Item>(Items::ROTTEN_MEAT, "It has a putrid smell.. eat at your own risk.",0, -5);
-    auto Moldy_Bread = std::make_unique<Item>(Items::MODLY_BREAD, "The bread is old, its growing fur like an animal.", 0, 3);
+    auto Moldy_Bread = std::make_unique<Item>(Items::MOLDY_BREAD, "The bread is old, its growing fur like an animal.", 0, 3);
     auto Key = std::make_unique<Item>(Items::KEY, "A peculiar key, rusting and corroded with a strange insignia carved onto the back",1, 0);
 
     auto Orca = std::make_unique<Enemy>(ENEMIES::ORCA, "He towers over you, salivating at the idea of his next meal, battle scars are imprinted all over his body.", 15, 5);

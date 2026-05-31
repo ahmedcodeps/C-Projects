@@ -14,8 +14,6 @@
 class Room {
 public:
 
-    // ADD DEATH FUNCTION TO ORCA
-
     Room(const std::string& name, const std::string& description);
 
     const std::string& getName() const;

@@ -35,7 +35,7 @@ namespace Items {
     constexpr std::string BASS = "Bass";
     constexpr std::string SILVER_SWORD = "Silver Sword";
     constexpr std::string ROTTEN_MEAT = "Rotten Meat";
-    constexpr std::string MODLY_BREAD = "Moldy Bread";
+    constexpr std::string MOLDY_BREAD = "Moldy Bread";
     constexpr std::string KEY = "Key";
 }
 

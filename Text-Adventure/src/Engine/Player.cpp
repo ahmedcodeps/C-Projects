@@ -95,7 +95,7 @@ void Player::Eat(const std::string &item_name) {
             m_health += it->get()->getHeal();
             std::println("{} healed you for {} health, you are now at {} health.", it->get()->getName(), it->get()->getHeal(), m_health);
         }
-        
+
         m_items.erase(it);
         return;
     }
@@ -104,7 +104,7 @@ void Player::Eat(const std::string &item_name) {
 
 void Player::Use(const std::string &item_name) {
     auto it = m_items.begin();
-    if (isThere(item_name, m_items, it) && ToLowerCopy(item_name) == Items::KEY) {
+    if (isThere(item_name, m_items, it) && ToLowerCopy(Items::KEY) == item_name) {
         if (m_room->getName() == Locations::ABANDONED_SETTLEMENT) {
             std::println("You used the key to open the gate, the gate door swings open and you continue forward");
             for (auto& [direction, room] : m_room->getExits()) {

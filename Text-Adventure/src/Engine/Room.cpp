@@ -3,6 +3,12 @@
 #include <print>
 #include <ranges>
 
+std::string ToLowerCopy(std::string str) {
+    for (int i = 0; i < str.length(); i++) {
+        str[i] = std::tolower(static_cast<unsigned char>(str[i]));
+    }
+    return str;
+}
 
 Room::Room(const std::string& name, const std::string& description) :
 m_name(name), m_description(description), m_enemy(nullptr) {}
@@ -82,13 +88,8 @@ bool Room::removeEnemy() {
 std::unique_ptr<Item> Room::giveItem(const std::string &item_name) {
 
     for (auto it = m_items.begin(); it != m_items.end(); ++it) {
-        std::string namecopy = it->get()->getName();
 
-        for (int i = 0; i < namecopy.length(); i++) {
-            namecopy[i] = tolower(static_cast<unsigned char>(namecopy[i]));
-        }
-
-        if (namecopy == item_name) {
+        if (ToLowerCopy(it->get()->getName()) == item_name) {
             std::unique_ptr<Item> item_ptr = std::move(*it);
             m_items.erase(it);
             return (item_ptr);
