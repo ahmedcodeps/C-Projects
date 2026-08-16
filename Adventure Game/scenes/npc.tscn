@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://dea8pf85hovm"]
+
+[ext_resource type="Script" uid="uid://bv6mmn1vm1j81" path="res://scenes/Npc.cs" id="1_rv78h"]
+[ext_resource type="Texture2D" uid="uid://b6tmfg43nxyrt" path="res://graphics/Lights/main.png" id="3_7n8xq"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://graphics/FX/Better VCR 9.0.1.ttf" id="3_rv78h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ulbd"]
+size = Vector2(16, 11)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ulbd"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ulbd"]
+radius = 42.0
+
+[node name="NPC" type="CharacterBody2D" unique_id=1087203668]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_rv78h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1591596271]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_6ulbd")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1467481230]
+position = Vector2(1, -0.9999995)
+scale = Vector2(1.25, 1.4375)
+animation = &""
+
+[node name="TextBox" type="CanvasLayer" parent="." unique_id=676768437]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBox" unique_id=1807150493]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = -281.0
+offset_right = -252.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="TextBox/MarginContainer" unique_id=414072156]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ulbd")
+metadata/_edit_lock_ = true
+
+[node name="AnswerContainer" type="MarginContainer" parent="TextBox/MarginContainer" unique_id=1165001873]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="TextBox/MarginContainer/AnswerContainer" unique_id=462270622]
+layout_mode = 2
+
+[node name="Answers" type="HBoxContainer" parent="TextBox/MarginContainer/AnswerContainer" unique_id=1328091514]
+visible = false
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Start" type="Label" parent="TextBox/MarginContainer/AnswerContainer/Answers" unique_id=309011884]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rv78h")
+theme_override_font_sizes/font_size = 16
+text = "*"
+
+[node name="Answer" type="Label" parent="TextBox/MarginContainer/AnswerContainer/Answers" unique_id=1980875517]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_rv78h")
+theme_override_font_sizes/font_size = 16
+text = "
+placeholder"
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Questions" type="Panel" parent="TextBox" unique_id=531138592]
+offset_left = 302.0
+offset_top = 374.0
+offset_right = 899.0
+offset_bottom = 495.0
+size_flags_horizontal = 2
+
+[node name="Q1" type="Button" parent="TextBox/Questions" unique_id=1573084325]
+layout_mode = 0
+offset_left = 183.0
+offset_top = -5.0
+offset_right = 388.0
+offset_bottom = 19.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rv78h")
+theme_override_font_sizes/font_size = 12
+text = "default"
+
+[node name="Q2" type="Button" parent="TextBox/Questions" unique_id=1318135815]
+visible = false
+layout_mode = 0
+offset_left = 182.0
+offset_top = 19.0
+offset_right = 388.0
+offset_bottom = 43.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rv78h")
+theme_override_font_sizes/font_size = 12
+text = "default"
+
+[node name="Q3" type="Button" parent="TextBox/Questions" unique_id=1726907191]
+visible = false
+layout_mode = 0
+offset_left = 182.0
+offset_top = 40.0
+offset_right = 387.0
+offset_bottom = 64.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rv78h")
+theme_override_font_sizes/font_size = 12
+text = "default"
+
+[node name="Q4" type="Button" parent="TextBox/Questions" unique_id=1776894308]
+visible = false
+layout_mode = 0
+offset_left = 182.0
+offset_top = 62.0
+offset_right = 387.0
+offset_bottom = 86.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rv78h")
+theme_override_font_sizes/font_size = 12
+text = "default"
+
+[node name="Q5" type="Button" parent="TextBox/Questions" unique_id=40252774]
+visible = false
+layout_mode = 0
+offset_left = 184.0
+offset_top = 85.0
+offset_right = 389.0
+offset_bottom = 109.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_rv78h")
+theme_override_font_sizes/font_size = 12
+text = "default"
+
+[node name="Name" type="Control" parent="TextBox" unique_id=872983285]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="TextBox/Name" unique_id=424103763]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 310.0
+offset_right = 648.0
+offset_bottom = 365.0
+theme_override_colors/font_color = Color(1, 1, 0.627451, 1)
+theme_override_colors/font_shadow_color = Color(0.9406359, 0.94063586, 0.94063574, 0)
+theme_override_fonts/font = ExtResource("3_rv78h")
+theme_override_font_sizes/font_size = 20
+text = "default
+"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1226649937]
+position = Vector2(0.9999995, 1)
+scale = Vector2(0.32250005, 0.3025)
+color = Color(0.35906926, 0.35906905, 0.35906902, 1)
+energy = 0.85
+texture = ExtResource("3_7n8xq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1266088952]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=651348569]
+shape = SubResource("CircleShape2D_6ulbd")
+
+[connection signal="pressed" from="TextBox/Questions/Q1" to="." method="OnQ1Pressed"]
+[connection signal="pressed" from="TextBox/Questions/Q2" to="." method="OnQ2Pressed"]
+[connection signal="pressed" from="TextBox/Questions/Q3" to="." method="OnQ3Pressed"]
+[connection signal="pressed" from="TextBox/Questions/Q4" to="." method="OnQ4Pressed"]
+[connection signal="pressed" from="TextBox/Questions/Q5" to="." method="OnQ5Pressed"]

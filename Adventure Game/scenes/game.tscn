@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cf4h1yvnigos3"]
+
+[ext_resource type="Script" uid="uid://c06g4vwdjo2g5" path="res://scenes/Game.cs" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://umsuhv53sv5m" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://bwtfglyr2qrrw" path="res://maps/old_town.tscn" id="2_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://yb8qr7pkqlr8" path="res://maps/lagoon.tscn" id="2_gee14"]
+[ext_resource type="PackedScene" uid="uid://bxx47r05nj40w" path="res://maps/finalbattle.tscn" id="2_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://siqeynkbm33t" path="res://maps/chambers.tscn" id="2_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://5p05e2meps2m" path="res://maps/dungeon.tscn" id="2_vtaks"]
+[ext_resource type="PackedScene" uid="uid://cjvfvwjdc7rh2" path="res://maps/forest.tscn" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://dktdw5xb5a1qn" path="res://maps/graveyard.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bt0ekijrrdeag" path="res://scenes/text_menu.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dp2a8b6mp03cq" path="res://scenes/battle.tscn" id="4_p57ef"]
+
+[node name="Game" type="Node2D" unique_id=1241751284 groups=["Game"]]
+position = Vector2(-1, 0)
+script = ExtResource("1_lnu2h")
+Maps = Array[PackedScene]([ExtResource("3_lbhrr"), ExtResource("3_iywne"), ExtResource("2_u5sy4"), ExtResource("2_gee14"), ExtResource("2_0tnpc"), ExtResource("2_vtaks"), ExtResource("2_kvpfn")])
+BattleScene = ExtResource("4_p57ef")
+
+[node name="Map" type="Node2D" parent="." unique_id=1330296090]
+
+[node name="Entities" type="Node2D" parent="." unique_id=871393887]
+
+[node name="Player" parent="Entities" unique_id=450261485 instance=ExtResource("1_uwrxv")]
+position = Vector2(30, 151)
+
+[node name="Battle" type="Node2D" parent="." unique_id=1269466665]
+
+[node name="TextMenu" parent="." unique_id=1682255154 instance=ExtResource("4_lbhrr")]
+Messages = Array[String](["......", "......", "What is this place?", "Am I in a graveyard?", "Who's that over there?", "\"HEY COME ON OVER!\"", "Is that.. a ghost?"])

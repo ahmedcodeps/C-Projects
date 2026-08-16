@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://bokhy0622sbpe"]
+
+[ext_resource type="Script" uid="uid://do32lb7byw746" path="res://Item.cs" id="1_4gq7n"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://graphics/FX/Better VCR 9.0.1.ttf" id="3_6muww"]
+[ext_resource type="PackedScene" uid="uid://bt0ekijrrdeag" path="res://scenes/text_menu.tscn" id="3_vljjh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ulbd"]
+size = Vector2(42, 47)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vljjh"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3v2ag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2wvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4r1p"]
+
+[node name="Item" type="Area2D" unique_id=656245856]
+collision_mask = 2
+script = ExtResource("1_4gq7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40150943]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_6ulbd")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=887639929]
+scale = Vector2(0.5, 0.5)
+
+[node name="ItemMenu" type="CanvasLayer" parent="." unique_id=1743974733]
+visible = false
+
+[node name="Name" type="Control" parent="ItemMenu" unique_id=1325434550]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 122.0
+offset_top = -211.0
+offset_right = 162.0
+offset_bottom = -171.0
+
+[node name="Label" type="Label" parent="ItemMenu/Name" unique_id=591028739]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 346.0
+offset_right = 522.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(1, 1, 0.627451, 1)
+theme_override_colors/font_shadow_color = Color(0.9406359, 0.94063586, 0.94063574, 0)
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 20
+text = "default"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemMenu" unique_id=211909489]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 516.0
+offset_top = -490.0
+offset_right = -412.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+offset_transform_enabled = true
+
+[node name="Panel" type="Panel" parent="ItemMenu/MarginContainer" unique_id=376280879]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vljjh")
+
+[node name="AnswerContainer" type="MarginContainer" parent="ItemMenu/MarginContainer" unique_id=1873018820]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="ItemMenu/MarginContainer/AnswerContainer" unique_id=1697980427]
+layout_mode = 2
+
+[node name="EventContainer" type="HBoxContainer" parent="ItemMenu/MarginContainer/AnswerContainer" unique_id=603993180]
+visible = false
+layout_mode = 2
+
+[node name="Start" type="Label" parent="ItemMenu/MarginContainer/AnswerContainer/EventContainer" unique_id=1822262796]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 16
+text = "*"
+
+[node name="Event" type="Label" parent="ItemMenu/MarginContainer/AnswerContainer/EventContainer" unique_id=1436980760]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 16
+text = "
+placeholder"
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Use" type="Button" parent="ItemMenu" unique_id=1173497634]
+offset_left = 538.0
+offset_top = 168.0
+offset_right = 649.0
+offset_bottom = 199.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3v2ag")
+text = "Use
+"
+
+[node name="Eat" type="Button" parent="ItemMenu" unique_id=1449991863]
+offset_left = 537.0
+offset_top = 202.0
+offset_right = 650.0
+offset_bottom = 238.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d2wvv")
+text = "Eat
+"
+
+[node name="Description" type="Button" parent="ItemMenu" unique_id=240936918]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -91.0
+offset_right = 74.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y4r1p")
+text = "Description
+"
+
+[node name="Drop" type="Button" parent="ItemMenu" unique_id=721943447]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -18.0
+offset_right = 76.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y4r1p")
+text = "Drop
+
+"
+
+[node name="Equip" type="Button" parent="ItemMenu" unique_id=1177643047]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -54.0
+offset_right = 79.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y4r1p")
+text = "Equip
+
+"
+
+[node name="ConfirmationMenu" type="CanvasLayer" parent="." unique_id=1163288275]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="ConfirmationMenu" unique_id=1652010584]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 371.0
+offset_top = -473.0
+offset_right = -211.00006
+offset_bottom = -250.14288
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+offset_transform_enabled = true
+
+[node name="Panel" type="Panel" parent="ConfirmationMenu/MarginContainer" unique_id=576452154]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vljjh")
+
+[node name="ConfirmationContainer" type="MarginContainer" parent="ConfirmationMenu/MarginContainer" unique_id=579545712]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="ConfirmationMenu/MarginContainer/ConfirmationContainer" unique_id=1879271004]
+layout_mode = 2
+
+[node name="EventContainer" type="HBoxContainer" parent="ConfirmationMenu/MarginContainer/ConfirmationContainer" unique_id=274168201]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="ConfirmationMenu/MarginContainer/ConfirmationContainer/EventContainer" unique_id=1839039141]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 16
+text = "*"
+
+[node name="Event" type="Label" parent="ConfirmationMenu/MarginContainer/ConfirmationContainer/EventContainer" unique_id=995666443]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_6muww")
+theme_override_font_sizes/font_size = 16
+text = "Are you sure you want to drop this item? It will appear again in a random location on the map."
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Yes" type="Button" parent="ConfirmationMenu" unique_id=154725833]
+offset_left = 387.0
+offset_top = 259.0
+offset_right = 422.0
+offset_bottom = 290.0
+text = "Yes"
+
+[node name="No" type="Button" parent="ConfirmationMenu" unique_id=50353490]
+offset_left = 387.0
+offset_top = 287.0
+offset_right = 422.0
+offset_bottom = 318.0
+text = "No"
+
+[node name="TextMenu" parent="." unique_id=1682255154 instance=ExtResource("3_vljjh")]
+Messages = Array[String](["You got an Item!", ""])
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

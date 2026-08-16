@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bm3272ffldpxk"
+path="res://.godot/imported/24. Dinosaur Boss Battle.mp3-78bcbc28fbe2e1bec527e3fdea83cd50.mp3str"
+
+[deps]
+
+source_file="res://Music/24. Dinosaur Boss Battle.mp3"
+dest_files=["res://.godot/imported/24. Dinosaur Boss Battle.mp3-78bcbc28fbe2e1bec527e3fdea83cd50.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

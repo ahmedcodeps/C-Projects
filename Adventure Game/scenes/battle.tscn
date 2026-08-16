@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://dp2a8b6mp03cq"]
+
+[ext_resource type="Script" uid="uid://b1o3k2tiim0y2" path="res://scenes/Battle.cs" id="1_dn72j"]
+[ext_resource type="Texture2D" uid="uid://2c5uyiu168q5" path="res://graphics/UI/Tiles/Large tiles/Thick outline/tile_0004.png" id="2_a12nh"]
+[ext_resource type="AudioStream" uid="uid://bm3272ffldpxk" path="res://Music/24. Dinosaur Boss Battle.mp3" id="2_f4pi3"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://graphics/FX/Better VCR 9.0.1.ttf" id="2_th188"]
+[ext_resource type="Texture2D" uid="uid://b8px8e8burxm2" path="res://graphics/UI/Tiles/Large tiles/Thick outline/tile_0001.png" id="3_p1qf1"]
+[ext_resource type="AudioStream" uid="uid://kceejuths1jt" path="res://Music/26. Ganondorf Battle.mp3" id="3_yahae"]
+[ext_resource type="PackedScene" uid="uid://bt0ekijrrdeag" path="res://scenes/text_menu.tscn" id="4_lpir7"]
+[ext_resource type="Script" uid="uid://1w0ogp4feoo3" path="res://scenes/DamagePopUp.cs" id="6_6vh42"]
+[ext_resource type="Texture2D" uid="uid://8p5nlwcsxj5g" path="res://graphics/UI/Tiles/Small tiles/Thick outline/tile_0011.png" id="7_f4pi3"]
+
+[sub_resource type="Theme" id="Theme_ja3x6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a12nh"]
+texture = ExtResource("2_a12nh")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3v2ag"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1qf1"]
+texture = ExtResource("3_p1qf1")
+
+[sub_resource type="Theme" id="Theme_6ulbd"]
+default_font = ExtResource("2_th188")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a12nh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03edq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1qf1"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7i3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66ngm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vh42"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4pi3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a12nh"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22uqi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yahae"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ni85"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vceff"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpir7"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djc8l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4dll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0caf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6vh42"]
+texture = ExtResource("7_f4pi3")
+
+[node name="Battle" type="Node2D" unique_id=2065741125]
+script = ExtResource("1_dn72j")
+BattleMusic = ExtResource("2_f4pi3")
+BossMusic = ExtResource("3_yahae")
+
+[node name="PlayerPoint" type="Marker2D" parent="." unique_id=1143872810]
+position = Vector2(450, 600)
+
+[node name="EnemyPoint" type="Marker2D" parent="." unique_id=883932975]
+position = Vector2(350, 600)
+
+[node name="BattleCamera" type="Camera2D" parent="." unique_id=2019009275]
+position = Vector2(400, 601)
+zoom = Vector2(2, 2)
+
+[node name="BattleUI" type="CanvasLayer" parent="." unique_id=1186583703]
+
+[node name="EnemyStatsPanel" type="PanelContainer" parent="BattleUI" unique_id=1980812148]
+offset_left = 210.0
+offset_top = 400.0
+offset_right = 280.0
+offset_bottom = 435.0
+offset_transform_enabled = true
+theme = SubResource("Theme_ja3x6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_a12nh")
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="BattleUI/EnemyStatsPanel" unique_id=1814580575]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(15, -5)
+theme_override_fonts/font = ExtResource("2_th188")
+theme_override_font_sizes/font_size = 10
+text = "Enemy"
+
+[node name="HealthLabel" type="Label" parent="BattleUI/EnemyStatsPanel" unique_id=475956167]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(15, 7)
+theme_override_fonts/font = ExtResource("2_th188")
+theme_override_font_sizes/font_size = 10
+text = "10/10"
+
+[node name="PlayerStatsPanel" type="PanelContainer" parent="BattleUI" unique_id=1550501598]
+offset_left = 435.0
+offset_top = 400.0
+offset_right = 505.0
+offset_bottom = 435.0
+offset_transform_enabled = true
+theme = SubResource("Theme_ja3x6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_a12nh")
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="BattleUI/PlayerStatsPanel" unique_id=1693327135]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(15, -5)
+theme_override_fonts/font = ExtResource("2_th188")
+theme_override_font_sizes/font_size = 10
+text = "Player"
+
+[node name="HealthLabel" type="Label" parent="BattleUI/PlayerStatsPanel" unique_id=1655244248]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(15, 7)
+theme_override_fonts/font = ExtResource("2_th188")
+theme_override_font_sizes/font_size = 10
+text = "10/10"
+
+[node name="MessageBox" type="PanelContainer" parent="BattleUI" unique_id=1168024648]
+offset_left = 383.0
+offset_top = 295.0
+offset_right = 642.0
+offset_bottom = 384.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3v2ag")
+metadata/_edit_use_anchors_ = true
+
+[node name="ActionMenu" parent="BattleUI/MessageBox" unique_id=1682255154 instance=ExtResource("4_lpir7")]
+Messages = Array[String](["", ""])
+
+[node name="ActionPanel" type="PanelContainer" parent="BattleUI" unique_id=496267810]
+offset_left = 979.0
+offset_top = 449.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_p1qf1")
+metadata/_edit_use_anchors_ = true
+
+[node name="ActionsContainer" type="VBoxContainer" parent="BattleUI/ActionPanel" unique_id=178820886]
+layout_mode = 2
+theme = SubResource("Theme_6ulbd")
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="UseButton" type="Button" parent="BattleUI/ActionPanel/ActionsContainer" unique_id=1367437576]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.69342846, 0.69343, 0.69342875, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a12nh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_03edq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p1qf1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v7i3o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_66ngm")
+text = "Use Item"
+
+[node name="DefendButton" type="Button" parent="BattleUI/ActionPanel/ActionsContainer" unique_id=115818940]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6vh42")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4pi3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a12nh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_22uqi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yahae")
+text = "Defend"
+
+[node name="FleeButton" type="Button" parent="BattleUI/ActionPanel/ActionsContainer" unique_id=327580416]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6521796, 0.65217966, 0.6521796, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6ni85")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vceff")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lpir7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_djc8l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h4dll")
+text = "Flee"
+
+[node name="DamagePopUp" type="Node2D" parent="." unique_id=1980168440]
+script = ExtResource("6_6vh42")
+
+[node name="Label" type="Label" parent="DamagePopUp" unique_id=222183761]
+offset_left = -5.0
+offset_top = 19.0
+offset_right = 54.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("2_th188")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p0caf")
+text = "damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="DamagePopUp" unique_id=1334898525]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 43.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_th188")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = SubResource("StyleBoxTexture_6vh42")
+text = "damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BattleUI/ActionPanel/ActionsContainer/UseButton" to="." method="OnUseButtonPressed"]
+[connection signal="pressed" from="BattleUI/ActionPanel/ActionsContainer/DefendButton" to="." method="OnDefendButtonPressed"]
+[connection signal="pressed" from="BattleUI/ActionPanel/ActionsContainer/FleeButton" to="." method="OnFleeButtonPressed"]

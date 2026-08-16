@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dutpyunnwlbrm"
+path="res://.godot/imported/08. Kepora Gebora's Theme.mp3-28b435e8d47341a5b6a07abf1bd04c23.mp3str"
+
+[deps]
+
+source_file="res://Music/08. Kepora Gebora's Theme.mp3"
+dest_files=["res://.godot/imported/08. Kepora Gebora's Theme.mp3-28b435e8d47341a5b6a07abf1bd04c23.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

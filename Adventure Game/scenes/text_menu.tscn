@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bt0ekijrrdeag"]
+
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://graphics/FX/Better VCR 9.0.1.ttf" id="1_1m5dc"]
+[ext_resource type="Script" uid="uid://cnhgya0xwd0yw" path="res://scenes/TextMenu.cs" id="1_5un35"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5un35"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="TextMenu" type="CanvasLayer" unique_id=1682255154]
+visible = false
+script = ExtResource("1_5un35")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=293148656]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 294.0
+offset_top = -214.0
+offset_right = -170.85718
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+offset_transform_enabled = true
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=534629842]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5un35")
+
+[node name="MessageContainer" type="MarginContainer" parent="MarginContainer" unique_id=2040511486]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="MarginContainer/MessageContainer" unique_id=1146765629]
+layout_mode = 2
+
+[node name="EventContainer" type="HBoxContainer" parent="MarginContainer/MessageContainer" unique_id=492655754]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="MarginContainer/MessageContainer/EventContainer" unique_id=43634953]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_1m5dc")
+theme_override_font_sizes/font_size = 16
+text = "*"
+
+[node name="Message" type="Label" parent="MarginContainer/MessageContainer/EventContainer" unique_id=882839128]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("1_1m5dc")
+theme_override_font_sizes/font_size = 16
+text = "Are you sure you want to drop this item? You can pick it up again."
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0

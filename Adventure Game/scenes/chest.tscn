@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c5mcy6t8xq1g2"]
+
+[ext_resource type="Texture2D" uid="uid://cog084p34hy78" path="res://graphics/terrain/treasure-chest.png" id="1_oii8l"]
+[ext_resource type="Script" uid="uid://bkgqu6011lihp" path="res://scenes/Chest.cs" id="1_sy5e1"]
+[ext_resource type="PackedScene" uid="uid://bt0ekijrrdeag" path="res://scenes/text_menu.tscn" id="3_gqd3d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy5e1"]
+atlas = ExtResource("1_oii8l")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqd3d"]
+atlas = ExtResource("1_oii8l")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1joix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy5e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqd3d")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ulbd"]
+size = Vector2(29, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1joix"]
+size = Vector2(16, 15)
+
+[node name="Chest" type="Area2D" unique_id=1119205468]
+collision_mask = 3
+script = ExtResource("1_sy5e1")
+
+[node name="Open" type="AnimatedSprite2D" parent="." unique_id=2098573690]
+position = Vector2(13.999999, 35)
+scale = Vector2(0.4, 0.385)
+sprite_frames = SubResource("SpriteFrames_1joix")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1274084054]
+position = Vector2(14, 38)
+shape = SubResource("RectangleShape2D_6ulbd")
+
+[node name="TextMenu" parent="." unique_id=1682255154 instance=ExtResource("3_gqd3d")]
+Messages = Array[String](["You do not have the key required to open this chest."])
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=789939597]
+collision_layer = 5
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1969246482]
+position = Vector2(14, 38)
+shape = SubResource("RectangleShape2D_1joix")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="." to="." method="OnBodyExited"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4pqgyaby8h73"
+path="res://.godot/imported/03. Inside a House.mp3-5b718c9bf542fdc2a4e4c2f792911835.mp3str"
+
+[deps]
+
+source_file="res://Music/03. Inside a House.mp3"
+dest_files=["res://.godot/imported/03. Inside a House.mp3-5b718c9bf542fdc2a4e4c2f792911835.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
