@@ -235,110 +235,7 @@ bool CheckForMultiPipe(const struct Command* cmd);
 bool free_allocations(struct Command* cmd);
 int build_mult_pipe_arrays(const struct Command* cmd, char*** out_paths, char**** out_argvs); 
 void rebuild_raw_command(struct Command* cmd); 
-
-void ExpandVariables(struct Command* cmd) {
-    for (int i = 0; i < cmd->num_args; i++) {
-        char* arg = cmd->command_args[i];
-        if (strchr(arg, '$') == NULL) continue;
-
-        size_t cap = strlen(arg) * 2 + 64;
-        char* result = malloc(cap);
-        size_t rlen = 0;
-
-        char* p = arg;
-        while (*p) {
-            if (*p == '$' && *(p + 1) == '{') {
-                char* end = strchr(p + 2, '}');
-                if (end != NULL) {
-                    size_t namelen = end - (p + 2);
-                    char varname[CHUNK];
-                    strncpy(varname, p + 2, namelen);
-                    varname[namelen] = '\0';
-
-                    const char* value = NULL;
-                    if (variables_container != NULL) {
-                        for (int j = 0; j < variables_container->index; j++) {
-                            if (STRCMP(variables_container->declared_variables[j]->name, varname)) {
-                                value = variables_container->declared_variables[j]->value;
-                                break;
-                            }
-                        }
-                    }
-
-                    if (value != NULL) {
-                        size_t vlen = strlen(value);
-                        if (rlen + vlen + 1 > cap) {
-                            cap = (rlen + vlen + 1) * 2;
-                            result = realloc(result, cap);
-                        }
-                        memcpy(result + rlen, value, vlen);
-                        rlen += vlen;
-                    }
-
-                    p = end + 1;
-                    continue;
-                }
-            }
-            else if (*p == '$' && (isalpha((unsigned char)*(p + 1)) || *(p + 1) == '_')) {
-                char* name_start = p + 1;
-                char* q = name_start;
-                while (isalnum((unsigned char)*q) || *q == '_') q++;
-
-                size_t namelen = q - name_start;
-                char varname[CHUNK];
-                strncpy(varname, name_start, namelen);
-                varname[namelen] = '\0';
-
-                const char* value = "";
-                if (variables_container != NULL) {
-                    for (int j = 0; j < variables_container->index; j++) {
-                        if (STRCMP(variables_container->declared_variables[j]->name, varname)) {
-                            value = variables_container->declared_variables[j]->value;
-                            break;
-                        }
-                    }
-                }
-
-                size_t vlen = strlen(value);
-                if (rlen + vlen + 1 > cap) {
-                    cap = (rlen + vlen + 1) * 2;
-                    result = realloc(result, cap);
-                }
-                memcpy(result + rlen, value, vlen);
-                rlen += vlen;
-
-                p = q; // skip past the variable name
-                continue;
-            }
-
-            if (rlen + 2 > cap) {
-                cap *= 2;
-                result = realloc(result, cap);
-            }
-            result[rlen++] = *p;
-            p++;
-        }
-        result[rlen] = '\0';
-
-        free(cmd->command_args[i]);
-        cmd->command_args[i] = result;
-    }
-
-    int write_idx = 0;
-    for (int read_idx = 0; read_idx < cmd->num_args; read_idx++) {
-        if (cmd->command_args[read_idx][0] == '\0') {
-            free(cmd->command_args[read_idx]);
-            continue;
-        }
-        cmd->command_args[write_idx] = cmd->command_args[read_idx];
-        write_idx++;
-    }
-    cmd->num_args = write_idx;
-    cmd->command_args[cmd->num_args] = NULL;
-
-    free(cmd->raw_command);
-    rebuild_raw_command(cmd);
-}
+void ExpandVariables(struct Command* cmd);
 
 void init_command(struct Command* cmd, char* raw_command) {
   if (raw_command == NULL) {
@@ -1444,10 +1341,6 @@ bool CandidateAlreadyExists(const char* str, const register_command* reg) {
     return false;
 }
 
-void SortCandidatesAlphabetically(register_command* regis) {
-    /// alphabetically sort maybe
-}
-
 void FreeCompletions(completion_candidates* comps) {
     for (int i = 0; i < comps->commands_size; i++) 
         free(comps->commands[i]);
@@ -1486,6 +1379,111 @@ void AppendExecutables(completion_candidates* comp_cand) {
     }
     free(path_copy);
 }
+
+void ExpandVariables(struct Command* cmd) {
+    for (int i = 0; i < cmd->num_args; i++) {
+        char* arg = cmd->command_args[i];
+        if (strchr(arg, '$') == NULL) continue;
+
+        size_t cap = strlen(arg) * 2 + 64;
+        char* result = malloc(cap);
+        size_t rlen = 0;
+
+        char* p = arg;
+        while (*p) {
+            if (*p == '$' && *(p + 1) == '{') {
+                char* end = strchr(p + 2, '}');
+                if (end != NULL) {
+                    size_t namelen = end - (p + 2);
+                    char varname[CHUNK];
+                    strncpy(varname, p + 2, namelen);
+                    varname[namelen] = '\0';
+
+                    const char* value = NULL;
+                    if (variables_container != NULL) {
+                        for (int j = 0; j < variables_container->index; j++) {
+                            if (STRCMP(variables_container->declared_variables[j]->name, varname)) {
+                                value = variables_container->declared_variables[j]->value;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (value != NULL) {
+                        size_t vlen = strlen(value);
+                        if (rlen + vlen + 1 > cap) {
+                            cap = (rlen + vlen + 1) * 2;
+                            result = realloc(result, cap);
+                        }
+                        memcpy(result + rlen, value, vlen);
+                        rlen += vlen;
+                    }
+
+                    p = end + 1;
+                    continue;
+                }
+            }
+            else if (*p == '$' && (isalpha((unsigned char)*(p + 1)) || *(p + 1) == '_')) {
+                char* name_start = p + 1;
+                char* q = name_start;
+                while (isalnum((unsigned char)*q) || *q == '_') q++;
+
+                size_t namelen = q - name_start;
+                char varname[CHUNK];
+                strncpy(varname, name_start, namelen);
+                varname[namelen] = '\0';
+
+                const char* value = "";
+                if (variables_container != NULL) {
+                    for (int j = 0; j < variables_container->index; j++) {
+                        if (STRCMP(variables_container->declared_variables[j]->name, varname)) {
+                            value = variables_container->declared_variables[j]->value;
+                            break;
+                        }
+                    }
+                }
+
+                size_t vlen = strlen(value);
+                if (rlen + vlen + 1 > cap) {
+                    cap = (rlen + vlen + 1) * 2;
+                    result = realloc(result, cap);
+                }
+                memcpy(result + rlen, value, vlen);
+                rlen += vlen;
+
+                p = q;
+                continue;
+            }
+
+            if (rlen + 2 > cap) {
+                cap *= 2;
+                result = realloc(result, cap);
+            }
+            result[rlen++] = *p;
+            p++;
+        }
+        result[rlen] = '\0';
+
+        free(cmd->command_args[i]);
+        cmd->command_args[i] = result;
+    }
+
+    int write_idx = 0;
+    for (int read_idx = 0; read_idx < cmd->num_args; read_idx++) {
+        if (cmd->command_args[read_idx][0] == '\0') {
+            free(cmd->command_args[read_idx]);
+            continue;
+        }
+        cmd->command_args[write_idx] = cmd->command_args[read_idx];
+        write_idx++;
+    }
+    cmd->num_args = write_idx;
+    cmd->command_args[cmd->num_args] = NULL;
+
+    free(cmd->raw_command);
+    rebuild_raw_command(cmd);
+}
+
 
 bool free_allocations(struct Command* cmd) {
    if (cmd == NULL) return false;
