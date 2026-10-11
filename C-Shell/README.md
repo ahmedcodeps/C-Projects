@@ -12,3 +12,5 @@
 - changes directories
 ### history
 - lists recent commands
+
+(and a lot more)
